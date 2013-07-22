@@ -1,0 +1,143 @@
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+var items = [
+[326,321,281,608,493,481,561,125,302,723,1108,1139,1529,603,1023,2289,1462,1680,1760,1849,2831,2851,2961,1519,2633,1140,1626,1478,1306,1607,2698],
+[19,87,67,298,573,1142,1708,931,1362,1031,849,672,954,676,478,579,370,510,535,395,685,984,1579,1539,1489,650,653,2236,1937,2138,2225],
+[0,16,16,0,0,8,0,1,1,0,17,101,182,0,2,0,0,0,127,6,1,0,0,3,0,1,1,0,0,60,53],
+[0,0,0,0,0,0,0,0,0,0,0,0,76,36,44,56,79,85,33,33,37,36,30,42,77,257,337,31,127,91,39],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,112,115,326,30,11,79,0,0,0,0,0,0,0,0,0,0,0,0],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,911,1654,1086,695,688,1047,1652,1889,1766,1361,874,693,786,599,678,584],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,89,38,34,59,118,172,167,81,158,180,147,157,177],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,7,9,16,16,26,19,8,15,23,22,15,208],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,100,150,450,800,900,1350,1450,1950,2100,2000,1800],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,61,47,32,52,25,52,133,70,84,44],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,144,1259,971,338,334,494,411,450,455],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,17,26,55,58,42],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,119,295,364,416,390],
+[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27]
+];
+
+var cars = ["Volt", "Leaf", "Smart ED", "Mitsubishi I EV", "BMW Active E", "Prius PHEV", "Ford Focus", "Honda Fit EV", "Tesla Model S*", "RAV4 EV", "Ford C-Max Energi", "Honda Accord", "Ford Fusion Energi", "Chevrolet Spark"];
+
+var date = ["December, 2013","January, 2013","February, 2013","March, 2013","April, 2013","May, 2013","June, 2013","July, 2013","August, 2013","September, 2013","October, 2013","November, 2013","December, 2013","January, 2013","February, 2013","March, 2013","April, 2013","May, 2013","June, 2013","July, 2013","August, 2013","September, 2013","October, 2013","November, 2013","December, 2013","January, 2013","February, 2013","March, 2013","April, 2013","May, 2013","June, 2013"]
+
+$(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'column',
+                zoomType: 'xy'
+            },
+            title: {
+                text: 'Stacked column chart'
+            },
+            xAxis: {
+                categories: date
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Total fruit consumption'
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -100,
+                verticalAlign: 'top',
+                y: 20,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColorSolid) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                formatter: function() {
+                    return '<b>'+ this.x +'</b><br/>'+
+                        this.series.name +': '+ this.y +'<br/>'+
+                        'Total: '+ this.point.stackTotal;
+                }
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+//                    dataLabels: {
+//                        enabled: true,
+//                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+//                    }
+                }
+            },
+            series: [
+
+				{
+					name: cars[0],
+					data: items[0]
+				},
+				{
+					name: cars[1],
+					data: items[1]
+				},
+				{
+					name: cars[2],
+					data: items[2]
+				},
+				{
+					name: cars[3],
+					data: items[3]
+				},
+				{
+					name: cars[4],
+					data: items[4]
+				},
+				{
+					name: cars[5],
+					data: items[5]
+				},
+				{
+					name: cars[6],
+					data: items[6]
+				},
+				{
+					name: cars[7],
+					data: items[7]
+				},
+				{
+					name: cars[8],
+					data: items[8]
+				},
+				{
+					name: cars[9],
+					data: items[9]
+				},
+				{
+					name: cars[10],
+					data: items[10]
+				},
+				{
+					name: cars[11],
+					data: items[11]
+				},
+				{
+					name: cars[12],
+					data: items[12]
+				},
+				{
+					name: cars[13],
+					data: items[13]
+				}
+            ]
+        });
+    });
+    
+</script>

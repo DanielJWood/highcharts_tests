@@ -1,0 +1,1 @@
+Volt, Leaf, Smart ED, Mitsubishi I EV, BMW Active E, Prius PHEV, Ford Focus, Honda Fit EV, Tesla Model S*, RAV4 EV, Ford C-Max Energi, Honda Accord, Ford Fusion Energi, Chevrolet Spark
