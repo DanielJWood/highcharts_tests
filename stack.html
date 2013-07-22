@@ -36,7 +36,13 @@ $(function () {
                 text: 'Stacked column chart'
             },
             xAxis: {
-                categories: date
+                categories: date,
+                labels: {
+                	rotation: 90,
+                	y: 10,
+                	align: "left",
+
+                },
             },
             yAxis: {
                 min: 0,
