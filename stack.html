@@ -4,6 +4,8 @@
 
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 <script type="text/javascript">
+(function ($) {
+
 var items = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27],
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,119,295,364,416,390],
@@ -30,7 +32,7 @@ $(function () {
             chart: {
                 type: 'column',
                 zoomType: 'xy',
-                height: 600,
+                height: 500,
             },
             colors: [
 			   '#C71877',
@@ -144,5 +146,5 @@ $(function () {
             ]
         });
     });
-    
+}(jQuery));    
 </script>
