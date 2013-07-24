@@ -4,7 +4,7 @@
 
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 <script type="text/javascript">
-//update now
+//no commas
 
 var items = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27],
@@ -36,29 +36,10 @@ $(document).ready(function() {
                 zoomType: 'xy',
                 height: 500,
                 borderRadius: 0,
-	            backgroundColor: 'transparent'
+	            backgroundColor: '#FFFFFF'
             },
-            colors: [
-			   '#C71877',
-			   '#D8474F',
-			   '#E97627',
-			   '#FBA500',
-			   '#DFBC00',
-			   '#C3D400', 
-			   '#A8EC00',
-			   '#74B639',
-			   '#408072',
-			   '#26658F',
-			   '#0D4AAC',
-			   '#3B3D9E',
-			   '#6A3191',
-			   '#982484'
-			],
             title: {
                 text: ''
-                //text: 'Electric Vehicle Sales by Month',
-                //floating: true,
-                //y: 20,
             },
             legend: {
             	layout: 'vertical',
@@ -96,10 +77,6 @@ $(document).ready(function() {
             plotOptions: {
                 column: {
                     stacking: 'normal'
-//                    dataLabels: {
-//                        enabled: true,
-//                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
-//                    }
                 }
             },
             series: [
