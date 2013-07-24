@@ -4,7 +4,7 @@
 
 <div id="container" style="min-width: 400px; height: 400px; margin: 0 auto"></div>
 <script type="text/javascript">
-(function ($) {
+
 
 var items = [
 [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,27],
@@ -22,17 +22,24 @@ var items = [
 [19,87,67,298,573,1142,1708,931,1362,1031,849,672,954,676,478,579,370,510,535,395,685,984,1579,1539,1489,650,653,2236,1937,2138,2225],
 [326,321,281,608,493,481,561,125,302,723,1108,1139,1529,603,1023,2289,1462,1680,1760,1849,2831,2851,2961,1519,2633,1140,1626,1478,1306,1607,2698]
 ];
+console.log(items);
 
 var cars = ["Chevrolet Spark","Ford Fusion Energi","Honda Accord","Ford C-Max Energi","RAV4 EV","Tesla Model S*","Honda Fit EV","Ford Focus","Prius PHEV","BMW Active E","Mitsubishi I EV","Smart ED","Leaf","Volt"];
+console.log(items);
 
 var date = ["Dec 2010","Jan 2011","Feb 2011","Mar 2011","Apr 2011","May 2011","Jun 2011","Jul 2011","Aug 2011","Sep 2011","Oct 2011","Nov 2011","Dec 2011","Jan 2012","Feb 2012","Mar 2012","Apr 2012","May 2012","Jun 2012","Jul 2012","Aug 2012","Sep 2012","Oct 2012","Nov 2012","Dec 2012","Jan 2013","Feb 2013","Mar 2013","Apr 2013","May 2013","Jun 2013"]
-
-$(function () {
+console.log(items);
+(function ($) {
+$(document).ready(function() {
+	
+	console.log('hello');
         $('#container').highcharts({
             chart: {
                 type: 'column',
                 zoomType: 'xy',
                 height: 500,
+                borderRadius: 0,
+	            backgroundColor: 'transparent'
             },
             colors: [
 			   '#C71877',
@@ -52,6 +59,20 @@ $(function () {
 			],
             title: {
                 text: ''
+                //text: 'Electric Vehicle Sales by Month',
+                //floating: true,
+                //y: 20,
+            },
+            legend: {
+            	layout: 'vertical',
+            	verticalAlign: 'top',
+            	align: 'left',
+            	floating: true,
+            	x: 70,
+            	y: 15,
+            	backgroundColor: '#FFFFFF',
+            	borderRadius: 1
+
             },
             xAxis: {
                 categories: date,
@@ -64,7 +85,7 @@ $(function () {
             },
             yAxis: {
                 min: 0,
-                max: 9000,
+                max: 8500,
                 title: {
                     text: 'Total Cars Sold'
                 }                
@@ -147,4 +168,6 @@ $(function () {
         });
     });
 }(jQuery));    
+
+
 </script>
